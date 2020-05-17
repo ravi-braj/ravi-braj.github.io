@@ -347,13 +347,20 @@ module.exports = function(webpackEnv) {
           test: /\.less$/,
           use: [
             {
-              loader: 'style-loader' // creates style nodes from JS strings
-            }, {
-              loader: 'css-loader' // translates CSS into CommonJS
-            }, {
-              loader: 'less-loader' // compiles Less to CSS
-            }
-          ]
+              loader: 'style-loader',
+            },
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                lessOptions: {
+                  strictMath: true,
+                },
+              },
+            },
+          ],
         },
         {
           // "oneOf" will traverse all following loaders until one will
