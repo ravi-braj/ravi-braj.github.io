@@ -5,7 +5,10 @@ export class Splash extends React.PureComponent<{}, {}> {
     public render() {
         return (
             <div className="splash-container">
-                <span>This is the splash component</span>
+                <div className="splash-title">
+                    <h1>My name is Ravi</h1>
+                    <h2>this site is  under construction...</h2>
+                </div>
             </div>
         )
     }
