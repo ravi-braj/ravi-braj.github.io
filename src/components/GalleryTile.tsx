@@ -11,7 +11,7 @@ export class GalleryTile extends React.PureComponent<IGalleryTile, {}> {
     public render() {
         return (
             <div className="gallery-tile-container">
-                <div className="gallery-tile-logo">
+                <div className={"gallery-tile-logo"}>
                     <div className={this.props.logo}/>
                 </div>
                 <div className="gallery-tile-text">
