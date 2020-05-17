@@ -9,26 +9,30 @@
 
 .gallery-tile-container {
   background-color: @color4;
-  max-width: 50%;
+  max-width: 40rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 3rem;
   margin: 1rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 
-  .gallery-tile-logo {
-    position: relative;
+  .gallery-tile-logo-container {
     background-color: @color2;
-    height: 0;
     width: 20rem;
-    padding-bottom: 50%;
-
+  }
+  .gallery-tile-logo {
+    padding-bottom: 100%;
+  }
+  .gallery-tile-logo-inner {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
   }
   .gallery-tile-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 20rem;
     width: 20rem;
   }
 }
