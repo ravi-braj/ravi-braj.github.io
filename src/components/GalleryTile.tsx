@@ -2,7 +2,7 @@ import * as React from "react";
 
 interface IGalleryTile {
     name: string,
-    logo: string,
+    logo: any,
     description: string,
 }
 
@@ -12,9 +12,7 @@ export class GalleryTile extends React.PureComponent<IGalleryTile, {}> {
         return (
             <div className="gallery-tile-container">
                 <div className="gallery-tile-logo-container">
-                    <div className={this.props.logo + " gallery-tile-logo"}>
-                        <div className={"gallery-tile-logo-inner"}/>
-                    </div>
+                    <img className="gallery-tile-logo" src={this.props.logo}/>
                 </div>
                 <div className="gallery-tile-text">
                     <h2>{this.props.name}</h2>
