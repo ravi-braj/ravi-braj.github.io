@@ -167,7 +167,7 @@ export class Gosper implements FractalConfig {
 
     fractalSeed: Array<String> = ["X","F"];
     frameRate: number = 30;
-    linesPerFrame: number = 3;
+    linesPerFrame: number = 2;
     display: Display = {
         justifyX: Justify.CENTER,
         justifyY: Justify.CENTER,

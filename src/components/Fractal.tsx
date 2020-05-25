@@ -6,7 +6,8 @@ import {Display, FractalConfig, Justify, Line, RatioPosition} from "./FractalCon
 
 
 interface IFractalProps {
-    fractalConfig: FractalConfig
+    fractalConfig: FractalConfig,
+    trace?: boolean,
 }
 
 export class Fractal extends React.PureComponent<IFractalProps, {}> {
@@ -38,7 +39,6 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
         let maxX = queue.flat().map(x => Math.max(x.x0, x.x1)).reduce((prev, curr) => Math.max(prev, curr));
         let minY = queue.flat().map(x => Math.min(x.y0, x.y1)).reduce((prev, curr) => Math.min(prev, curr));
         let maxY = queue.flat().map(x => Math.max(x.y0, x.y1)).reduce((prev, curr) => Math.max(prev, curr));
-        console.log([minX, maxX, minY, maxY])
         return [minX, maxX, minY, maxY];
     }
 
@@ -97,12 +97,10 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
 
         let translateX = positionX - this.dimensions[0];
         let translateY = positionY - this.dimensions[2];
-        console.log("BOUNDINGBOX", boundingBox);
         line.x0 += translateX;
         line.x1 += translateX;
         line.y0 += translateY;
         line.y1 += translateY;
-        console.log("translating line by", translateX, translateY);
         return line;
     }
 
@@ -124,6 +122,18 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
         }
     }
 
+    private drawTrace(renderer: p5 | undefined, queue: Array<Array<Line>>) {
+        if(!renderer) return;
+        if(this.props.fractalConfig.display.rescale) this.rescale(this.props.fractalConfig.display.rescale);
+        for(let line of queue.flat()) {
+            line = this.translateLine(line, this.props.fractalConfig.display);
+            console.log("DRAWING TRACE")
+            renderer.strokeWeight(1);
+            renderer.stroke("#CCD0D5")
+            renderer.line(line.x0, line.y0, line.x1, line.y1)
+        }
+    }
+
     private renderEngine = (renderer: p5) => {
         renderer.setup = () => {
             let container = window.document.getElementById("fractal")
@@ -142,9 +152,8 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
             this.dimensions = this.getDimensions(this.queue);
             let totalLines: number = this.queue.reduce((total, curr) => total + curr.length, 0)
             renderer.frameRate(this.props.fractalConfig.frameRate)
-            for(let i = 0; i < 0*totalLines/130; i++) {
-                this.frameGenerator.next();
-            }
+            this.drawTrace(renderer, this.queue);
+
         }
 
         renderer.draw = () => {

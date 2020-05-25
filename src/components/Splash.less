@@ -4,14 +4,30 @@
   width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  padding-top: 5rem;
 }
 
 .splash-title {
-  margin-right: 1rem;
+  margin-top: 1rem;
   color: @color1;
 }
 
 .splash-logo {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 40%;
+}
+
+@media only screen and (min-width: 768px) {
+  .splash-container {
+    padding-top: 0;
+    flex-direction: row;
+  }
+  .splash-title {
+    margin-right: 1rem;
+  }
+  .splash-logo {
+    height: 50%;
+    width: 50%;
+  }
 }

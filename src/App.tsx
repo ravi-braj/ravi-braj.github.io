@@ -12,7 +12,7 @@ function App() {
           <Gallery/>
           <div className="background">
               <Parallax scrollProportion={0.4} className="fractal">
-                  <Fractal fractalConfig={new Gosper}/>
+                  <Fractal fractalConfig={new Gosper} trace={true}/>
               </Parallax>
           </div>
       </div>

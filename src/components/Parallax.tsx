@@ -20,7 +20,6 @@ export class Parallax extends React.PureComponent<IParallaxProps, IParallaxState
 
     handleScroll() {
         let scrollDiff = window.scrollY - this.state.scrollPositionY;
-        console.log(this.domRef);
         let newTop = this.state.top;
         if(this.domRef.current) {
             let diff = (scrollDiff*this.props.scrollProportion)
