@@ -49,11 +49,12 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
         let targetHeight = boundingBox.height*rescale.y;
         let rescaleX = targetWidth/(this.dimensions[1] - this.dimensions[0]);
         let rescaleY = targetHeight/(this.dimensions[3] - this.dimensions[2]);
+        let rescaleSmallest = boundingBox.width < boundingBox.height ? rescaleX : rescaleY
         this.queue = this.queue.map(layer => layer.map(line => {
-            line.x0 *= rescaleY;
-            line.x1 *= rescaleY;
-            line.y0 *= rescaleY;
-            line.y1 *= rescaleY;
+            line.x0 *= rescaleSmallest;
+            line.x1 *= rescaleSmallest;
+            line.y0 *= rescaleSmallest;
+            line.y1 *= rescaleSmallest;
             return line;
         }))
         this.dimensions = this.getDimensions(this.queue);
