@@ -1488,6 +1488,11 @@
   resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha1-OP1z3f2bVaux4bLtV4y1W9e30zk=
 
+"@types/lodash@^4.14.152":
+  version "4.14.152"
+  resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@types/lodash/-/lodash-4.14.152.tgz#7e7679250adce14e749304cdb570969f77ec997c"
+  integrity sha1-fnZ5JQrc4U50kwTNtXCWn3fsmXw=
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -1502,6 +1507,11 @@
   version "12.12.39"
   resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@types/node/-/node-12.12.39.tgz#532d25c1e639d89dd6f3aa1d7b3962e3e7fa943d"
   integrity sha1-Uy0lweY52J3W86odezli4+f6lD0=
+
+"@types/p5@^0.9.0":
+  version "0.9.0"
+  resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/@types/p5/-/p5-0.9.0.tgz#aea0afe6ab2f7368b000165a27869cee8f9060a7"
+  integrity sha1-rqCv5qsvc2iwABZaJ4ac7o+QYKc=
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -7426,6 +7436,11 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha1-yyhoVA4xPWHeWPr741zpAE1VQOY=
+
+p5@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.palantir.build/artifactory/api/npm/all-npm/p5/-/p5-1.0.0.tgz#d27c77c1c11450ede27af4614a5d24470ffab0c4"
+  integrity sha1-0nx3wcEUUO3ievRhSl0kRw/6sMQ=
 
 pako@~1.0.5:
   version "1.0.11"
