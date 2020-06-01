@@ -151,7 +151,6 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
                 }
             }
             this.dimensions = this.getDimensions(this.queue);
-            let totalLines: number = this.queue.reduce((total, curr) => total + curr.length, 0)
             renderer.frameRate(this.props.fractalConfig.frameRate)
             this.drawTrace(renderer, this.queue);
 

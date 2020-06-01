@@ -1,5 +1,5 @@
 import * as React from "react";
-import {ReactChildren, ReactNode} from "react";
+import {ReactNode} from "react";
 import {RefObject} from "react";
 
 interface IParallaxProps {
@@ -14,9 +14,6 @@ interface IParallaxState {
 
 export class Parallax extends React.PureComponent<IParallaxProps, IParallaxState> {
     domRef: RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
-    constructor(props: IParallaxProps) {
-        super(props);
-    }
 
     handleScroll() {
         let scrollDiff = window.scrollY - this.state.scrollPositionY;

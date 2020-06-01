@@ -1,0 +1,48 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: @color2;
+  width: 100%;
+  height: 100%;
+  padding: 0rem 0rem 5rem 0rem;
+}
+
+.sidebar-close {
+  width: 3rem;
+  height: 3rem;
+  margin: 2rem;
+  fill: @color3;
+
+  &:hover {
+    fill: lighten(@color2, 50);
+  }
+}
+
+.sidebar-tile {
+  height: 8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  border-bottom: solid 1px fade(@color3, 20);
+  border-top: solid 1px fade(@color3, 20);
+
+  &:hover {
+    //background-color: fade(@color3, 20);
+    cursor: pointer;
+    .sidebar-title{
+      color: lighten(@color2, 50);
+    }
+  }
+
+  &:hidden {
+    width: 0;
+  }
+
+  .sidebar-title {
+    font-weight: bold;
+    font-size: 3rem;
+    color: @color3;
+
+  }
+}
