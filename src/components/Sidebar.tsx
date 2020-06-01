@@ -18,7 +18,7 @@ export class Sidebar extends React.PureComponent<ISideBarProps, {}> {
     render() {
         return (
             <div className="sidebar-container">
-                <Chevron className="sidebar-close" onMouseUp={() => this.props.handleClose()}/>
+                <Chevron className="sidebar-close" onMouseDown={() => this.props.handleClose()}/>
                 <div className="sidebar-tiles">
                     {this.renderTile("Home")}
                     {this.renderTile("Experience")}

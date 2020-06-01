@@ -19,7 +19,7 @@ export class Navbar extends React.PureComponent<{}, INavbarState> {
         return (
             <div className="navbar-container">
                 <div className="navbar-bar">
-                    <Grid className="navbar-button" onMouseUp={() => this.setState({sidebar: true})}/>
+                    <Grid className="navbar-button" onMouseDown={() => this.setState({sidebar: true})}/>
                 </div>
                 <div className={`navbar-sidebar-container ${this.state.sidebar ? "" : "hidden"}`}>
                     <Sidebar handleClose={() => {this.setState({sidebar: false})}}/>

@@ -15,6 +15,7 @@
 
   &:hover {
     fill: lighten(@color2, 50);
+    cursor: pointer;
   }
 }
 
@@ -25,7 +26,10 @@
   align-items: center;
   padding: 3rem;
   border-bottom: solid 1px fade(@color3, 20);
-  border-top: solid 1px fade(@color3, 20);
+
+  &:first-child {
+    border-top: solid 1px fade(@color3, 20);
+  }
 
   &:hover {
     //background-color: fade(@color3, 20);
