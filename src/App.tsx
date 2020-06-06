@@ -3,14 +3,14 @@ import {Splash} from './components/Splash'
 import {Gallery} from "./components/Gallery";
 import Navbar from "./components/NavBar";
 import {
-    BrowserRouter as Router,
+    HashRouter,
     Route,
 } from "react-router-dom";
 
 function App() {
   return (
       <div className="App">
-          <Router>
+          <HashRouter>
               <Navbar/>
               <Route exact path="/">
                   <Splash/>
@@ -18,7 +18,7 @@ function App() {
               <Route path="/experience">
                   <Gallery/>
               </Route>
-          </Router>
+          </HashRouter>
       </div>
   );
 }
