@@ -1,23 +1,24 @@
 import React from 'react';
 import {Splash} from './components/Splash'
 import {Gallery} from "./components/Gallery";
-import {Fractal} from "./components/Fractal";
-import {Gosper} from "./components/FractalConfigs";
-import {Parallax} from "./components/Parallax";
-import {Navbar} from "./components/NavBar";
-import {Sidebar} from "./components/Sidebar";
+import Navbar from "./components/NavBar";
+import {
+    BrowserRouter as Router,
+    Route,
+} from "react-router-dom";
 
 function App() {
   return (
       <div className="App">
-          <Navbar/>
-          <Splash/>
-          <Gallery/>
-          <div className="background">
-              <Parallax scrollProportion={0.4} className="fractal">
-                  <Fractal fractalConfig={new Gosper()} trace={true}/>
-              </Parallax>
-          </div>
+          <Router>
+              <Navbar/>
+              <Route exact path="/">
+                  <Splash/>
+              </Route>
+              <Route path="/experience">
+                  <Gallery/>
+              </Route>
+          </Router>
       </div>
   );
 }

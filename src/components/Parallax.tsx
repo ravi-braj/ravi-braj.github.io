@@ -1,6 +1,5 @@
 import * as React from "react";
-import {ReactNode} from "react";
-import {RefObject} from "react";
+import {ReactNode, RefObject} from "react";
 
 interface IParallaxProps {
     children: ReactNode,

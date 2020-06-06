@@ -128,7 +128,6 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
         if(this.props.fractalConfig.display.rescale) this.rescale(this.props.fractalConfig.display.rescale);
         for(let line of queue.flat()) {
             line = this.translateLine(line, this.props.fractalConfig.display);
-            console.log("DRAWING TRACE")
             renderer.strokeWeight(1);
             renderer.stroke("#CCD0D5")
             renderer.line(line.x0, line.y0, line.x1, line.y1)

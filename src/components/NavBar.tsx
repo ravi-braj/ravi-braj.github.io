@@ -1,14 +1,14 @@
 import * as React from "react";
-import {ReactComponent as Home} from "../assets/home.svg";
 import {ReactComponent as Grid} from "../assets/grid.svg";
-import {Sidebar} from "./Sidebar";
+import Sidebar from "./Sidebar";
+import {RouteComponentProps, withRouter} from "react-router";
 
 interface INavbarState {
     sidebar: boolean;
 }
 
-export class Navbar extends React.PureComponent<{}, INavbarState> {
-    constructor(props: {}) {
+class Navbar extends React.PureComponent<RouteComponentProps, INavbarState> {
+    constructor(props: RouteComponentProps) {
         super(props);
         this.state = {
             sidebar: false
@@ -28,3 +28,5 @@ export class Navbar extends React.PureComponent<{}, INavbarState> {
         )
     }
 }
+
+export default withRouter(Navbar);
