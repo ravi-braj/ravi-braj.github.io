@@ -52,16 +52,24 @@ export class Tree implements FractalConfig {
     frameRate: number = 100;
     linesPerFrame: number = 20;
     display: Display = {
-        justifyX: Justify.END,
-        justifyY: Justify.END,
+        justifyX: Justify.CENTER,
+        justifyY: Justify.CENTER,
+        ratioShift: {
+            x: 0,
+            y: 0,
+        },
+        rescale: {
+            x: 0.99,
+            y: 0.99
+        }
     }
 
 
     startingState(window: Window) {
         let container = window.document.getElementById("fractal")
         let startingPosition = {
-            x: container ? 0.65*container.getBoundingClientRect().width : 0,
-            y: container ? 1.1*container.getBoundingClientRect().height : 0,
+            x: 0,
+            y: 0,
             angle: -Math.PI/2,
             depth: 0,
         }
@@ -112,6 +120,14 @@ export class Dragon implements FractalConfig {
     display: Display = {
         justifyX: Justify.CENTER,
         justifyY: Justify.CENTER,
+        ratioShift: {
+            x: 0,
+            y: 0,
+        },
+        rescale: {
+            x: 0.99,
+            y: 0.99
+        }
     }
 
     startingState(window: Window) {
@@ -182,10 +198,9 @@ export class Gosper implements FractalConfig {
     }
 
     startingState(window: Window) {
-        let container = window.document.getElementById("fractal")
         let startingPosition = {
-            x: container ? 0.25*container.getBoundingClientRect().width : 0,
-            y: container ? 0.35*container.getBoundingClientRect().height : 0,
+            x: 0,
+            y: 0,
             angle: Math.PI + Math.PI/2,
             depth: 0,
         }
@@ -237,6 +252,14 @@ export class Triangle implements FractalConfig {
     display: Display = {
         justifyX: Justify.CENTER,
         justifyY: Justify.CENTER,
+        ratioShift: {
+            x: 0,
+            y: 0,
+        },
+        rescale: {
+            x: 0.99,
+            y: 0.99
+        }
     }
 
     startingState(window: Window) {

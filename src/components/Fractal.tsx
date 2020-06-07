@@ -151,14 +151,12 @@ export class Fractal extends React.PureComponent<IFractalProps, {}> {
             }
             this.dimensions = this.getDimensions(this.queue);
             renderer.frameRate(this.props.fractalConfig.frameRate)
-            this.drawTrace(renderer, this.queue);
+            if (this.props.trace) this.drawTrace(renderer, this.queue);
 
         }
 
         renderer.draw = () => {
             this.frameGenerator.next();
-            renderer.angleMode("degrees")
-            renderer.rotate(30)
         }
     }
 

@@ -6,6 +6,7 @@ import {
     HashRouter,
     Route,
 } from "react-router-dom";
+import {FractalExplorer} from "./components/FractalExplorer";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
               </Route>
               <Route path="/experience">
                   <Gallery/>
+              </Route>
+              <Route path="/fractals">
+                  <FractalExplorer/>
               </Route>
           </HashRouter>
       </div>
